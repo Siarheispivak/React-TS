@@ -33,7 +33,11 @@ function App() {
             {/*<OnOff on={switchOn} onClick={setSwitchOn} />*/}
             {/*<UncontrolledOnOff  onChange={setSwitchOn}/>{switchOn.toString()}*/}
 
-            <Select collapsed={accordionCollapsed} onChange={()=>{setAccordionCollapsed(!accordionCollapsed)}} items = {[
+
+            {/*можно контроллировать от сюда открытие.закрытие селекта*/}
+            {/*collapsed={accordionCollapsed} onChange={()=>{setAccordionCollapsed(!accordionCollapsed)}}*/}
+            {/*можно контроллировать от сюда открытие.закрытие селекта*/}
+            <Select  items = {[
                 {title:'Dimych',value:1},
                 {title:'Viktor',value:2},
                 {title:'Sergey',value:3},
