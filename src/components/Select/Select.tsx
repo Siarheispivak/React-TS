@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, KeyboardEvent} from 'react';
 import Accordion from '@mui/material/Accordion';
 import s from './Select.module.scss';
 import {AccordionDetails, AccordionSummary, Typography} from "@mui/material";
@@ -21,7 +21,7 @@ const Select = (props: SelectType) => {
 
     return (
         <div>
-            {<SelectBody
+            <SelectBody
                 items={props.items}
                 title={parentValue}
                 setParentValue={setParentValue}
@@ -29,7 +29,7 @@ const Select = (props: SelectType) => {
                 expanded={expanded}
                 setHoveredElement={setHoveredElement}
                 hoveredElement={hoveredElement}
-            />}
+            />
         </div>
     )
 };
@@ -39,8 +39,8 @@ type SelectBodyType = {
     setParentValue: (newTitle: string) => void
     setExpanded: (expanded: boolean) => void
     expanded: boolean
-    setHoveredElement:(hoveredTitle: string) => void
-    hoveredElement:string
+    setHoveredElement: (hoveredTitle: string) => void
+    hoveredElement: string
 }
 const SelectBody = (props: SelectBodyType) => {
 
@@ -50,9 +50,13 @@ const SelectBody = (props: SelectBodyType) => {
             props.setExpanded(!props.expanded)
         }
 
+
         return (
             <option
-                onMouseEnter={()=>{props.setHoveredElement(el.title)}}
+                onMouseEnter={() => {
+                    props.setHoveredElement(el.title)
+                }}
+
                 className={s.item + " " + (props.hoveredElement === el.title ? s.selected : "")}
                 onClick={onDivClick}
                 key={el.value}>{el.title}

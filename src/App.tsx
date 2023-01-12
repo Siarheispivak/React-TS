@@ -8,6 +8,7 @@ import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOf
 import {OnOff} from "./components/OnOff/OnOff";
 import Select from "./components/Select/Select";
 import Accordion2 from "./components/Accordion/Accordion";
+import {Example1} from "./components/ReactMemo/ReactMemo";
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
                 {title:'Sergey',value:3},
                 {title:'Evgenij',value:4}
             ]} />
+            <Example1/>
         </div>
     );
 }
