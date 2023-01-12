@@ -3,12 +3,12 @@ import './App.css';
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
-
-import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
-import {OnOff} from "./components/OnOff/OnOff";
+import {UncontrolledOnOff, UncontrolledOnOffContainerComponent} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import Select from "./components/Select/Select";
 import Accordion2 from "./components/Accordion/Accordion";
 import {Example1} from "./components/ReactMemo/ReactMemo";
+import {OnOffContainerComponent} from "./components/OnOff/OnOff";
+
 
 function App() {
 
@@ -30,21 +30,21 @@ function App() {
             {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
             {/*<UncontrolledRating/>*/}
 
-            {/*<OnOff onClick={setOnOffValue} value={onOffValue}/>*/}
-            {/*<OnOff on={switchOn} onClick={setSwitchOn} />*/}
-            {/*<UncontrolledOnOff  onChange={setSwitchOn}/>{switchOn.toString()}*/}
+            {/*<OnOffContainerComponent onClick={setOnOffValue} value={onOffValue}/>*/}
+            {/*<OnOffContainerComponent on={switchOn} onClick={setSwitchOn} />*/}
+            {/*<UncontrolledOnOffContainerComponent  onChange={setSwitchOn}/>{switchOn.toString()}*/}
 
 
             {/*можно контроллировать от сюда открытие.закрытие селекта*/}
             {/*collapsed={accordionCollapsed} onChange={()=>{setAccordionCollapsed(!accordionCollapsed)}}*/}
             {/*можно контроллировать от сюда открытие.закрытие селекта*/}
-            <Select  items = {[
-                {title:'Dimych',value:1},
-                {title:'Viktor',value:2},
-                {title:'Sergey',value:3},
-                {title:'Evgenij',value:4}
-            ]} />
-            <Example1/>
+            {/*<Select  items = {[*/}
+            {/*    {title:'Dimych',value:1},*/}
+            {/*    {title:'Viktor',value:2},*/}
+            {/*    {title:'Sergey',value:3},*/}
+            {/*    {title:'Evgenij',value:4}*/}
+            {/*]} />*/}
+            {/*<Example1/>*/}
         </div>
     );
 }

@@ -1,13 +1,11 @@
-import React, {useState} from 'react';
-import s from './OnOff.module.css'
-
+import React from 'react';
 
 type PropsType = {
     on:boolean
     onClick:(on:boolean)=>void // 2й способ
 }
 
-export const OnOff = (props:PropsType) => {
+ const OnOff = (props:PropsType) => {
 
     // let [on,setOn] = useState(false)
 
@@ -46,4 +44,4 @@ export const OnOff = (props:PropsType) => {
         </div>
     );
 };
-
+export const OnOffContainerComponent = React.memo(OnOff)

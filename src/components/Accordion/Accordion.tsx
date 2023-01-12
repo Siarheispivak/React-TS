@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from "react";
+import React from "react";
 
 
 type AccordionPropsType = {
@@ -7,33 +7,17 @@ type AccordionPropsType = {
     onChange: ()=>void
 }
 
-function Accordion2(props: AccordionPropsType) {
-    
-    return (
-        <div>
-            <AccordionTitle title={props.titleValue} onChange={props.onChange} />
-            {!props.collapsed && <AccordionBody />}
-        </div>
-    )
-
-}
-
 type AccordionTitlePropsType = {
     title: string
     onChange:()=>void
 
 }
-
 function AccordionTitle(props: AccordionTitlePropsType) {
     return (
         <h3 onClick={props.onChange}>{props.title}</h3>
     )
 }
-
-
 function AccordionBody() {
-
-
     return (
         <div>
             <ul>
@@ -42,7 +26,18 @@ function AccordionBody() {
                 <li>3</li>
             </ul>
         </div>
+    )
+}
 
+const AccordionTitleContainerComponent = React.memo(AccordionTitle)
+const AccordionBodyContainerComponent = React.memo(AccordionBody)
+
+function Accordion2(props: AccordionPropsType) {
+    return (
+        <div>
+            <AccordionTitleContainerComponent title={props.titleValue} onChange={props.onChange} />
+            {!props.collapsed && <AccordionBodyContainerComponent />}
+        </div>
     )
 }
 

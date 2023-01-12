@@ -1,11 +1,8 @@
 import React, {useState} from 'react';
 
-
-
 type PropsType = {
     onChange: (on: boolean) => void
 }
-
 export const UncontrolledOnOff = (props: PropsType) => {
 
     let [on, setOn] = useState(false)
@@ -45,7 +42,6 @@ export const UncontrolledOnOff = (props: PropsType) => {
         setOn(false)
         props.onChange(false)
     }
-
     return (
         <div>
             <div style={onStyle} onClick={onClicked}>on</div>
@@ -55,3 +51,4 @@ export const UncontrolledOnOff = (props: PropsType) => {
     );
 };
 
+export const UncontrolledOnOffContainerComponent = React.memo(UncontrolledOnOff)
