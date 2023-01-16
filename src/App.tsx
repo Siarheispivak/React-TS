@@ -8,13 +8,15 @@ import Select from "./components/Select/Select";
 import Accordion2 from "./components/Accordion/Accordion";
 import {Example1} from "./components/ReactMemo/ReactMemo";
 import {OnOffContainerComponent} from "./components/OnOff/OnOff";
+import {DifficultCountingExample, HelpsToReactMemo} from "./components/ReactMemo/UseMemo";
+import SelectUseMemo from "./components/Select/SelectUseMemo/SelectUseMemo";
 
 
 function App() {
 
-    let [ratingValue,setRatingValue] = useState<RatingValueType>(0)
-    let [accordionCollapsed,setAccordionCollapsed] = useState<boolean>(false)
-    let [switchOn,setSwitchOn] = useState<boolean>(false)
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
+    let [switchOn, setSwitchOn] = useState<boolean>(false)
 
     return (
         <div className={'App'}>
@@ -45,6 +47,14 @@ function App() {
             {/*    {title:'Evgenij',value:4}*/}
             {/*]} />*/}
             {/*<Example1/>*/}
+            {/*<DifficultCountingExample/>*/}
+            {/*<HelpsToReactMemo/>*/}
+            {<SelectUseMemo items={[
+                {title: 'Dimych', value: 1},
+                {title: 'Viktor', value: 2},
+                {title: 'Sergey', value: 3},
+                {title: 'Evgenij', value: 4}
+            ]}/>}
         </div>
     );
 }
@@ -57,7 +67,6 @@ function PageTitle(props: PageTitlePropsType) {
     // console.log("Title rendering")
     return <h1>{props.title}</h1>
 }
-
 
 
 export default App;
