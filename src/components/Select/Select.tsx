@@ -49,8 +49,6 @@ const SelectBody = (props: SelectBodyType) => {
             props.setParentValue(el.title)
             props.setExpanded(!props.expanded)
         }
-
-
         return (
             <option
                 onMouseEnter={() => {
@@ -60,7 +58,6 @@ const SelectBody = (props: SelectBodyType) => {
                 className={s.item + " " + (props.hoveredElement === el.title ? s.selected : "")}
                 onClick={onDivClick}
                 key={el.value}>{el.title}
-
             </option>
         )
     })
